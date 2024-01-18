@@ -1,10 +1,11 @@
 import cartModel from '../models/carts.model.js'
-import productsModel from '../models/products.model.js'
+//import productsModel from '../models/products.model.js'
+
 class CartManager {
     constructor() {
     }
 
-    //obtener carritos
+//     //obtener carritos
     getCarts = async () => {
         try {
             const carts = await cartModel.find().lean()
@@ -14,7 +15,7 @@ class CartManager {
         }
     }
 
-    //obtener el carrito según id
+//     //obtener el carrito según id
     getCartById = async (cartId) => {
         try {
             const cart = await cartModel.findById(cartId).populate('products.product').lean()
@@ -24,7 +25,7 @@ class CartManager {
         }
     }
 
-    //crear carrito
+//     //crear carrito
     addCart = async (cart) => {
         try {
             const cartExist = await cartModel.create(cart)
@@ -34,7 +35,7 @@ class CartManager {
         }
     }
 
-    //modificar carrito
+     //modificar carrito
     updateCart = async (cartId, newProductBody) => {
         try {
             const findCart = await cartModel.findById(cartId)
@@ -75,7 +76,7 @@ class CartManager {
             return cart.save()
 		} catch (err) {
 			return err.message
-		}
+    	}
     }
 
     //modificar cantidad del producto en carrito

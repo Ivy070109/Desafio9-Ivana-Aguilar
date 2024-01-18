@@ -1,11 +1,11 @@
 import { Router } from 'express'
-import usersModel from '../dao/models/users.model.js'
+//import usersModel from '../dao/models/users.model.js'
 //importo las funciones de bcrypt
 import { createHash, isValidPassword } from '../utils.js'
 //importar de passport
 import passport from 'passport'
 //importamos el congif de passport
-import initPassport from '../config/passport.config.js'
+import initPassport from '../auth/passport.auth.js'
 
 //inicializo la estrategia de passport
 initPassport()
