@@ -1,4 +1,4 @@
-import MessageManager from "../dao/database/MessageManager.js"
+import MessageManager from "../dao/controllers/MessageManager.js"
 
 const messages = new MessageManager()
 
